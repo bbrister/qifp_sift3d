@@ -75,7 +75,7 @@ int main(int argc, char *argv[]) {
                 return 1;
         }
         for (i = 0; i < num_points; i++) {
-                points[i] = buf + point_size * i;
+                points[i] = buf + DIM * i;
         }
 
         // Convert the DSO to a nested array of points
@@ -102,7 +102,10 @@ int main(int argc, char *argv[]) {
         kp.buf->yd = center[1];
         kp.buf->zd = center[2];
         kp.buf->sd = scale_factor * rad;
-        //TODO detect rotation?
+
+        //TODO detect rotation? for now sets to identity
+        if (identity_Mat_rm(DIM, &kp.buf->R))
+                return 1;
 
         // Read the image
         if (im_read(im_path, &im)) {
@@ -128,7 +131,15 @@ int main(int argc, char *argv[]) {
         }
 
         // Write the descriptors to a file
-        //TODO
+        if (write_SIFT3D_Descriptor_store(output_name, &desc)) {
+                fprintf(stderr, "Failed to write the descriptors to %s \n", 
+                        output_name);
+                return 1;
+        }
+
+        //XXX Write the mask and volume for debugging
+        im_write("mask.nii.gz", &mask);
+        im_write("im.nii.gz", &im);
 
         return 0;
 }
