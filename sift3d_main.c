@@ -102,6 +102,7 @@ int main(int argc, char *argv[]) {
         kp.buf->yd = center[1];
         kp.buf->zd = center[2];
         kp.buf->sd = scale_factor * rad;
+        kp.buf->o = kp.buf->s = 0;
 
         //TODO detect rotation? for now sets to identity
         if (identity_Mat_rm(DIM, &kp.buf->R))
