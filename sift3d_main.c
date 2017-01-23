@@ -138,9 +138,5 @@ int main(int argc, char *argv[]) {
                 return 1;
         }
 
-        //XXX Write the mask and volume for debugging
-        im_write("mask.nii.gz", &mask);
-        im_write("im.nii.gz", &im);
-
         return 0;
 }
