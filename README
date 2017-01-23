@@ -1,0 +1,4 @@
+This docker module extracts a single SIFT3D feature from a lesion segmentation. To run this module, use the following command:
+        sudo docker run ./siftfeature.sh [args...]
+
+See siftfeature.sh for the required arguments.
