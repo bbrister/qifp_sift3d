@@ -1,3 +1,4 @@
+#!/bin/sh
 # Usage: siftfeature.sh [dso filename] [output filename]
 DSO=$1
 OUTPUT=$2

@@ -8,7 +8,8 @@ WORKDIR /home/SIFT3D/build
 RUN cmake ..
 RUN make && make install
 WORKDIR /home/qifp-SIFT3D
-ADD CMakeLists.txt miniball.cpp Miniball.hpp miniball.h sift3d_main.c ./
+ADD CMakeLists.txt miniball.cpp Miniball.hpp miniball.h sift3d_main.c siftfeature.sh ./
 WORKDIR /home/qifp-SIFT3D/build
 RUN cmake ..
 RUN make
+WORKDIR /home/qifp-SIFT3D
