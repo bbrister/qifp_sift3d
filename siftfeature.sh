@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -e
 # Usage: siftfeature.sh [input directory] [output filename]
 DIR=$1
 OUTPUT=$2
