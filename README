@@ -2,3 +2,5 @@ This docker module extracts a single SIFT3D feature from a lesion segmentation. 
         sudo docker run ./siftfeature.sh [args...]
 
 See siftfeature.sh for the required arguments.
+
+Note that Miniball.hpp is under the GNU GPL v3 license, see the file for details.
