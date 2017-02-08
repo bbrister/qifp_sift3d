@@ -29,7 +29,7 @@ do
                 FEATURE=`cut -d, -f4- $TMP`
 
                 # Add a row to the feature table
-                echo "$INSTANCEUID,$PATIENTID,$FEATURE" >> $OUTPUT
+                echo "$PATIENTID,$INSTANCEUID,$FEATURE" >> $OUTPUT
         fi
 done
 
