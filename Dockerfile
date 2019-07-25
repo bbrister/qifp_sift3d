@@ -2,7 +2,7 @@ FROM ubuntu:16.04
 MAINTAINER Blaine Rister <blaine@stanford.edu>
 RUN apt-get update && apt-get install -y git build-essential cmake dcmtk zlib1g-dev liblapack-dev libdcmtk-dev libnifti-dev
 WORKDIR /home/
-RUN git clone -b dso --single-branch https://github.com/bbrister/SIFT3D.git
+RUN git clone -b master --single-branch https://github.com/bbrister/SIFT3D.git
 WORKDIR /home/SIFT3D/build
 RUN cmake ..
 RUN make && make install
